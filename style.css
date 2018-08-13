@@ -1,0 +1,148 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0px;
+}
+
+ul#navbar {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /*overflow: hidden;*/
+    background-color: #333;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+ul#navbar li {
+    display: inline-block;
+    width: 24%;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+ul#navbar li a {
+    font-family: "SF Pro Text";
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    height: 100%;
+    transition: 0.2s ease-in-out;
+}
+
+ul#navbar li a:hover {
+    color: silver;
+}
+
+.navbarLogo {
+    width: 105px; 
+    height: 35px; 
+    padding-left: 50px;
+    padding-top: 6px;
+    transition: 0.2s ease-in-out;
+}
+
+.navbarLogo:hover {
+    filter: opacity(80%);
+}
+
+img {
+    width: auto;
+    height: auto;
+}
+
+.phoneContainer {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.phoneBackground {
+    position: relative;
+    top: 0;
+    z-index: 1;
+}
+.phoneFrame {
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+}
+
+body {
+    background-color: white;
+    color: black;
+    font-family: "San Francisco Display Semibold"
+}
+div#subtext {
+    width: 50%;
+}
+.subtitle {
+    font-family: "San Francisco Display Semibold";
+    letter-spacing: .004em;
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+}
+ul#linksList {
+    display: table;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+    list-style-type: none;
+    width: 40%;
+}
+ul#linksList li {
+    display: table-cell;
+    width: 50%;
+    display: table-cell;
+    text-align: center;
+}
+ul#linksList li a {
+    display: block;
+    font-family: "SF Pro Text";
+    text-decoration: none;
+    font-size: 22px;
+    color: rgb(0,112,201);
+}
+ul#linksList li a:hover {
+    text-decoration: underline;
+}
+div img {
+    float: left;
+    height: auto;
+    width: 50%;
+}
+div h1 {
+    font-family: "San Francisco Display Semibold";
+    letter-spacing: -0.008em;
+    position: relative;
+    top: 30px;
+    left: 0px;
+    font-size: 4.7em;
+    text-align: center;
+}
+.button {
+    float: left;
+    background-color: #CFA437;
+    border-color: #CFA437;
+    border-radius: 25px;
+    font-size: 40px;
+    color: rgb(0,112,201);
+    width: 100px;
+    height: 60px;
+    padding: 8px 24px 8px 24px;
+    margin-right: 5px;
+    text-decoration: none;
+    transition: background 0.5s ease-in-out;
+}
+.button:hover {
+    transition: 0.5s ease-in-out;
+    background-color: white;
+    color: #CFA437;
+}
