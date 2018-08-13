@@ -1,72 +1,175 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <title>UF iOS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css" data-skrollr-stylesheet>
         <link rel="stylesheet" type="text/css" href="fonts.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    <body>
 
-            <ul id="navbar">
-              <li> <img src="iosatuf.png" alt="ios@UF" class="navbarLogo"> </li>
-              <li><a href="#news">Events</a></li>
-              <li><a href="#home">Contact Us</a></li>
-              <li><a href="#contact">Sign in</a></li>
-            </ul>
-
-    
-        <div class="phoneContainer">
-            <img src="phoneBackground.png" class="phoneBackground" 
-                data-0  ="top: 100px; max-width: 50vw; left: 25vw" 
-                data-75 ="top: 75px; max-width: 30vw; left: 35vw" 
-                data-400="top: 400px; max-width: 30vw; left: 35vw; transform: rotate(0deg); opacity: 1" 
-                data-800="top: 800px; left: 40vw; opacity: 0; transform: rotate(50deg)">
-            <img src="phoneFrame.png" class="phoneFrame" 
-                data-0  ="top: 100px; max-width: 50vw; left: 25vw" 
-                data-75 ="top: 75px; max-width: 30vw; left: 35vw" 
-                data-400="top: 400px; max-width: 30vw; left: 35vw; transform: rotate(0deg); opacity: 1" 
-                data-800="top: 800px; left: 40vw; opacity: 0; transform: rotate(50deg)">
-            <img src="u.png" class="phoneFrame" 
-                data-100  ="top: -30px; max-width: 30vw; left: 35vw; opacity: 0" 
-                data-200 ="top: 200px; opacity: 1"
-                data-400="top: 400px; max-width: 30vw; left: 35vw; transform: rotate(0deg); opacity: 1" 
-                data-800="top: 800px; left: 40vw; opacity: 0; transform: rotate(50deg)">
-            <img src="f.png" class="phoneFrame" 
-                data-100  ="top: 15px; max-width: 30vw; left: 35vw; opacity: 0" 
-                data-200 ="top: 200px; opacity: 1"
-                data-400="top: 400px; max-width: 30vw; left: 35vw; transform: rotate(0deg); opacity: 1" 
-                data-800="top: 800px; left: 40vw; opacity: 0; transform: rotate(50deg)">
-            <img src="ios.png" class="phoneFrame" 
-                data-100  ="top: 250px; max-width: 30vw; left: 35vw; opacity: 0" 
-                data-200 ="top: 200px; opacity: 1"
-                data-400="top: 400px; max-width: 30vw; left: 35vw; transform: rotate(0deg); opacity: 1" 
-                data-800="top: 800px; left: 40vw; opacity: 0; transform: rotate(50deg)">
+    <body id="skrollr-body">
+        <div class="topnav" id="myTopnav">
+            <div class="navContainer"> 
+                <a href="#home" class="active"><img src="iosatuf.png" alt="ios@UF" class="navbarLogo"/></a>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="phoneContainer" id="phoneContainer">
+            <img src="phoneBackground.png" id="phoneBackground">
+            <img src="phoneBackground2.png" id="phoneBackground2">
+            <img src="phoneFrame.png" id="phoneFrame">
+            <img src="u.png" id="u">
+            <img src="f.png" id="f">
+            <img src="ios.png" id="ios">
         </div>
 
-        <div style="text-align: center; width: 50%; float: center; display: block; margin: 0 auto; padding-top: 500px; padding-bottom: 0; z-index: 10">
+        <script>
+
+        </script>
+
+        <div class="sectionContainer">
             <h1>iOS@<span style="font-family: San Francisco Display Semibold">UF</span></h1>
 
-            <div>
-                <span class="subtitle">Ever wanted to learn how to make an App? Ever wanted to collaborate with other iOS developers? That's why this exists.</span>
+            <div class="subtitle">
+                <span>Have you ever wanted to learn how to make an App? Or maybe you have an amazing app idea? You're at the right place.</span>
             </div>
             
             <div style="padding-top: 30px">
                 <ul id="linksList">
                     <li>
-                        <a href="" style="text-align: center">Learn More <span style="font-family: SF Pro Icons; font-feature-settings: kern"></span></a>
+                        <a href="">Learn More <span style="font-family: SF Pro Icons; font-feature-settings: kern"></span></a>
                     </li>
                     <li>
-                        <a href="">Sign In</a>
+                        <a href="http://bit.ly/2MFbZA7" target="_blank">Sign In</a>
                     </li>
                 </ul>
             </div>
 
         </div>
 
+        <script>
+
+            var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+
+            function getElementById(id) {
+                return document.getElementById(id);
+            }
+
+            class Properties {
+
+                get startPhoneWidth() {
+                    //console.log(width)
+                    if (width >= 1200) {
+                        return 600
+                    }
+                    else if (width > 700) {
+                        return 500
+                    }
+                    else if (width > 500) {
+                        return 450
+                    }
+                    else {
+                        return 350
+                    }
+                }
+
+                get endPhoneWidth() {
+                    if (width >= 1200) {
+                        return 375
+                    }
+                    else if (width > 700) {
+                        return 360
+                    }
+                    else if (width > 500) {
+                        return 360
+                    }
+                    else {
+                        return 300
+                    }
+                }
+
+            }
+
+            function px(int) {
+                return int.toString() + 'px';
+            }
+
+            const p = new Properties()
+
+            var pb = getElementById('phoneBackground');
+            pb.setAttribute('data-0', 'top: 100px; width:' + px(p.startPhoneWidth));
+            pb.setAttribute('data-175', 'top: 175px; width:' + px(p.endPhoneWidth));
+            pb.setAttribute('data-700', 'top: 700px; opacity: 1; ');
+            pb.setAttribute('data-1200', 'top: 550px; opacity: 1; ');
+
+            var pb2 = getElementById('phoneBackground2');
+            pb2.setAttribute('data-0', 'top: 0px; opacity: 0; width:' + px(p.endPhoneWidth));
+            pb2.setAttribute('data-300', 'top: 300px; opacity: 0; width' + px(p.endPhoneWidth));
+            pb2.setAttribute('data-600', 'top: 600px; opacity: 1; ');
+            pb2.setAttribute('data-700', 'top: 700px;');
+            pb2.setAttribute('data-1200', 'top: 550px;');
+
+            var pf = getElementById('phoneFrame');
+            pf.setAttribute('data-0', 'top: 100px; width:' + px(p.startPhoneWidth));
+            pf.setAttribute('data-175', 'top: 175px; width:' + px(p.endPhoneWidth));
+            pf.setAttribute('data-700', 'top: 700px; opacity: 1; ');
+            pf.setAttribute('data-1200', 'top: 550px; opacity: 1; ');
+
+            var u = getElementById('u');
+            u.setAttribute('data-0', 'top: 0px; opacity: 0; width:' + px(p.endPhoneWidth));
+            u.setAttribute('data-200', 'top: 120px; opacity: 0; width' + px(p.endPhoneWidth));
+            u.setAttribute('data-500', 'top: 500px; opacity: 1; ');
+            u.setAttribute('data-700', 'top: 700px;');
+            u.setAttribute('data-1200', 'top: 550px;');
+
+            var f = getElementById('f');
+            f.setAttribute('data-0', 'top: 0px; opacity: 0; width:' + px(p.endPhoneWidth));
+            f.setAttribute('data-200', 'top: 280px; opacity: 0; width' + px(p.endPhoneWidth));
+            f.setAttribute('data-500', 'top: 500px; opacity: 1; ');
+            f.setAttribute('data-700', 'top: 700px;');
+            f.setAttribute('data-1200', 'top: 550px;');
+
+            var ios = getElementById('ios');
+            ios.setAttribute('data-0', 'top: 0px; width:' + px(p.endPhoneWidth));
+            ios.setAttribute('data-200', 'top: 200px; opacity: 0; width' + px(p.endPhoneWidth));
+            ios.setAttribute('data-500', 'top: 500px; opacity: 0; ');
+            ios.setAttribute('data-700', 'top: 700px; opacity: 1;');
+            ios.setAttribute('data-1200', 'top: 550px;');
+
+        </script>
+
         <script type="text/javascript" src="src/skrollr.js"></script>
+        <script type="text/javascript" src="src/skrollr.stylesheets.js"></script>
         <script type="text/javascript">
-        var s = skrollr.init();
+        var s = skrollr.init({
+            constants: {
+                foobar: '1000px'
+            }
+        });
+        var root = document.documentElement;
+        document.addEventListener('resize', () => {
+          root.style.setProperty('--screen-x', window.screenX)
+          root.style.setProperty('--screen-y', window.screenY)
+        })
         </script>
     </body>
+
 </html>

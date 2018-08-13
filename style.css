@@ -3,48 +3,82 @@ html, body {
     padding: 0;
 }
 
-ul#navbar {
-    width: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    /*overflow: hidden;*/
-    background-color: #333;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-    z-index: 10;
+
+.topnav {
+  overflow: hidden;
+  opacity: 50%;
+  background-color: rgba(10, 10, 10, 0.85);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-ul#navbar li {
-    display: inline-block;
-    width: 24%;
-    margin: 0;
-    padding: 0;
-    vertical-align: middle;
+.topnav a {
+  font-family: "SF Pro Text";
+  transition: 0.2s ease-in-out;
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  width: 25%;
+  height: 100%;
+  padding: 7px 0px;
+  text-decoration: none;
+  font-size: 13px;
 }
 
-ul#navbar li a {
-    font-family: "SF Pro Text";
+.topnav a:hover {
+  color: silver;
+}
+
+.active {
+  color: silver;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
     display: block;
-    color: white;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    height: 100%;
-    transition: 0.2s ease-in-out;
+  }
 }
 
-ul#navbar li a:hover {
+@media screen and (max-width: 700px) {
+  .topnav.responsive a {
+    height: 25%;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding-left: 0px;
+  }
+  .topnav.responsive a:first-child {
+    width: 50%;
+  }
+  .topnav.responsive a:last-child {
+    width: 50%;
+    float: right;
+    text-align: right;
+    padding-right: 50px;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a:hover {
     color: silver;
+  }
 }
 
 .navbarLogo {
-    width: 105px; 
-    height: 35px; 
+    width: auto; 
+    height: 20px; 
     padding-left: 50px;
-    padding-top: 6px;
     transition: 0.2s ease-in-out;
 }
 
@@ -60,61 +94,45 @@ img {
 .phoneContainer {
     display: flex;
     position: relative;
-    padding-bottom: 600px;
+    padding-bottom: 1000px;
+    text-align: center;
 }
-.phoneBackground {
-    position: absolute;
-    z-index: 1;
-}
+
+
+
 .phoneFrame {
     position: absolute;
     z-index: 2;
 }
 
 body {
-    padding-bottom: 100px;
+    padding-bottom: 125px;
     background-color: white;
     color: black;
     font-family: "San Francisco Display Semibold"
 }
+
+.sectionContainer {
+    text-align: center; 
+    width: 50%; 
+    float: center; 
+    display: block; 
+    margin: 0 auto; 
+    z-index: 10
+}
+
 div#subtext {
     width: 50%;
 }
-.subtitle {
-    font-family: "San Francisco Display Semibold";
-    letter-spacing: .004em;
-    text-decoration: none;
-    font-size: 30px;
-    text-align: center;
-}
-ul#linksList {
-    display: table;
-    margin: 0 auto;
-    padding: 0;
-    justify-content: center;
-    list-style-type: none;
-    width: 40%;
-}
-ul#linksList li {
-    display: table-cell;
-    width: 50%;
-    display: table-cell;
-    text-align: center;
-}
-ul#linksList li a {
-    display: block;
-    font-family: "SF Pro Text";
-    text-decoration: none;
-    font-size: 22px;
-    color: rgb(0,112,201);
-}
-ul#linksList li a:hover {
-    text-decoration: underline;
-}
-div img {
+div#phoneContainer img {
+    padding-top: 30px;
     float: left;
-    height: auto;
-    width: 50%;
+    width: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
 }
 div h1 {
     font-family: "San Francisco Display Semibold";
@@ -122,25 +140,282 @@ div h1 {
     position: relative;
     top: 30px;
     left: 0px;
-    font-size: 4.7em;
+    font-size: calc(20px + 6vw);
     text-align: center;
 }
-.button {
-    float: left;
-    background-color: #CFA437;
-    border-color: #CFA437;
-    border-radius: 25px;
-    font-size: 40px;
-    color: rgb(0,112,201);
-    width: 100px;
-    height: 60px;
-    padding: 8px 24px 8px 24px;
-    margin-right: 5px;
+
+.subtitle {
+    font-family: "San Francisco Display Semibold";
+    letter-spacing: .004em;
     text-decoration: none;
-    transition: background 0.5s ease-in-out;
+    font-size: calc(12px + 2.3vw);
+    text-align: center;
 }
-.button:hover {
-    transition: 0.5s ease-in-out;
-    background-color: white;
-    color: #CFA437;
+
+ul#linksList li a:hover {
+    text-decoration: underline;
+}
+
+#phoneBackground {
+    
+}
+
+#phoneFrame {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .sectionContainer {
+        text-align: center; 
+        width: 80vw; 
+        float: center; 
+        display: block; 
+        margin: 0 auto; 
+        padding-top: 500px; 
+        z-index: 10
+    }
+
+    div h1 {
+        font-family: "San Francisco Display Semibold";
+        letter-spacing: -0.008em;
+        position: relative;
+        top: 30px;
+        left: 0px;
+        padding-bottom: 20px;
+        font-size: 55px;
+        text-align: left;
+    }
+
+    .subtitle {
+        font-family: "San Francisco Display Semibold";
+        letter-spacing: .004em;
+        text-decoration: none;
+        font-size: 21px;
+        text-align: left;
+    }
+
+    ul#linksList {
+        display: table;
+        margin: 0 auto;
+        padding: 0;
+        justify-content: left;
+        list-style-type: table;
+        width: 100%;
+    }
+    ul#linksList li {
+        float: left;
+        display: block;
+        padding-top: 10px;
+        width: 100%;
+        text-align: left;
+    }
+    ul#linksList li a {
+        font-family: "SF Pro Text";
+        text-decoration: none;
+        font-size: 18px;
+        color: rgb(0,112,201);
+    }
+
+}
+
+@media only screen and (min-width: 500px), (max-width: 700) {
+
+    .sectionContainer {
+        text-align: center; 
+        width: 400px; 
+        float: center; 
+        display: block; 
+        margin: 0 auto; 
+        padding-top: 500px; 
+        padding-bottom: 0; 
+        z-index: 10
+    }
+
+    div h1 {
+        font-family: "San Francisco Display Semibold";
+        color: yellow;
+        letter-spacing: -0.008em;
+        position: relative;
+        top: 30px;
+        left: 0px;
+        padding-bottom: 20px;
+        font-size: 55px;
+        text-align: left;
+    }
+
+    .subtitle {
+        font-family: "San Francisco Display Semibold";
+        letter-spacing: .004em;
+        text-decoration: none;
+        font-size: 23px;
+        text-align: left
+    }
+
+    ul#linksList {
+        display: table;
+        margin: 0 auto;
+        padding: 0;
+        justify-content: left;
+        list-style-type: table;
+        width: 100%;
+    }
+    ul#linksList li {
+        float: left;
+        display: block;
+        padding-top: 10px;
+        width: 100%;
+        text-align: left;
+    }   
+    ul#linksList li a {
+        font-family: "SF Pro Text";
+        text-decoration: none;
+        font-size: 18px;
+        color: rgb(0,112,201);
+    }
+
+}
+
+@media only screen and (min-width: 700px), (max-width: 1200) {
+
+    .navContainer {
+        display: table;
+        margin: 0 auto;
+        width: 700px;
+        height: 100%;
+    }
+
+    .sectionContainer {
+        text-align: center; 
+        width: 550px; 
+        float: center; 
+        display: block; 
+        margin: 0 auto; 
+        padding-top: 500px; 
+        padding-bottom: 0; 
+        z-index: 10
+    }
+
+    div h1 {
+        font-family: "San Francisco Display Semibold";
+        color: red;
+        letter-spacing: -0.008em;
+        position: relative;
+        top: 30px;
+        left: 0px;
+        padding-bottom: 0px;
+        font-size: 65px;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-family: "San Francisco Display Semibold";
+        letter-spacing: .004em;
+        text-decoration: none;
+        font-size: 25px;
+        text-align: center
+    }
+
+    ul#linksList {
+        display: table;
+        margin: 0 auto;
+        padding: 0;
+        justify-content: center;
+        list-style-type: none;
+        width: 40%;
+    }
+    ul#linksList li {
+        display: table-cell;
+        width: 50%;
+        display: table-cell;
+        text-align: center;
+    }
+    ul#linksList li a {
+        display: block;
+        font-family: "SF Pro Text";
+        text-decoration: none;
+        font-size: 20px;
+        color: rgb(0,112,201);
+    }
+    ul#linksList li a:hover {
+        text-decoration: underline;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    
+    .navContainer {
+        display: table;
+        margin: 0 auto;
+        width: 700px;
+        height: 100%;
+    }
+
+    .sectionContainer {
+        text-align: center; 
+        width: 700px; 
+        float: center; 
+        display: block; 
+        margin: 0 auto; 
+        padding-top: 500px; 
+        padding-bottom: 0; 
+        z-index: 10
+    }
+
+    div h1 {
+        font-family: "San Francisco Display Semibold";
+        color: blue;
+        letter-spacing: -0.008em;
+        position: relative;
+        top: 50px;
+        left: 0px;
+        padding-bottom: 20px;
+        font-size: 75px;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-family: "San Francisco Display Semibold";
+        letter-spacing: .004em;
+        text-decoration: none;
+        font-size: 30px;
+        text-align: center
+    }
+
+    ul#linksList {
+        display: table;
+        margin: 0 auto;
+        padding: 0;
+        justify-content: center;
+        list-style-type: none;
+        width: 40%;
+    }
+    ul#linksList li {
+        display: table-cell;
+        width: 50%;
+        display: table-cell;
+        text-align: center;
+    }
+    ul#linksList li a {
+        display: block;
+        font-family: "SF Pro Text";
+        text-decoration: none;
+        font-size: 22px;
+        color: rgb(0,112,201);
+    }
+    ul#linksList li a:hover {
+        text-decoration: underline;
+    }
+
+    /*
+                    data-0  ="top: 100px; max-width: 600px; left: 25vw" 
+                    data-75 ="top: 75px; max-width: 400px; left: 35vw" 
+                    data-400="top: 400px; max-width: 30vw; left: 35vw; transform: rotate(0deg); opacity: 1" 
+                    data-800="top: 800px; left: 40vw; opacity: 0; transform: rotate(50deg)"*/
+
 }
