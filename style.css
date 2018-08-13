@@ -60,9 +60,10 @@ img {
 .phoneContainer {
     display: flex;
     position: relative;
+    padding-bottom: 600px;
 }
 .phoneBackground {
-    position: relative;
+    position: absolute;
     z-index: 1;
 }
 .phoneFrame {
