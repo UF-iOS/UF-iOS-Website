@@ -37,7 +37,7 @@
 
         </script>
 
-        <div class="sectionContainer">
+        <div class="sectionContainer" id="sectionContainer">
             <h1>UF iOS</h1>
 
             <div class="subtitle">
@@ -88,6 +88,14 @@
 
             class Properties {
 
+                constructor() {
+                    if (width > 500) {
+                        this.shouldAnimate = true
+                    } else {
+                        this.shouldAnimate = false
+                    }
+                }
+
                 get startPhoneWidth() {
                     if (width >= 1200) {
                         return 600
@@ -127,48 +135,66 @@
             const p = new Properties()
 
             var a = getElementById('appsText');
-            a.setAttribute('data-0', 'top: 20px; opacity: 1; width:' + px(p.startPhoneWidth * 0.4));
-            a.setAttribute('data-175', 'top: 0px; opacity: 0; width:' + px(p.endPhoneWidth * 0.4));
-
             var pb = getElementById('phoneBackground');
-            pb.setAttribute('data-0', 'top: 125px; width:' + px(p.startPhoneWidth));
-            pb.setAttribute('data-175', 'top: 175px; width:' + px(p.endPhoneWidth));
-            pb.setAttribute('data-700', 'top: 700px; opacity: 1; ');
-            pb.setAttribute('data-1200', 'top: 550px; opacity: 1; ');
-
             var pb2 = getElementById('phoneBackground2');
-            pb2.setAttribute('data-0', 'top: 0px; opacity: 0; width:' + px(p.endPhoneWidth));
-            pb2.setAttribute('data-300', 'top: 300px; opacity: 0; width' + px(p.endPhoneWidth));
-            pb2.setAttribute('data-600', 'top: 600px; opacity: 1; ');
-            pb2.setAttribute('data-700', 'top: 700px;');
-            pb2.setAttribute('data-1200', 'top: 550px;');
-
             var pf = getElementById('phoneFrame');
-            pf.setAttribute('data-0', 'top: 125px; width:' + px(p.startPhoneWidth));
-            pf.setAttribute('data-175', 'top: 175px; width:' + px(p.endPhoneWidth));
-            pf.setAttribute('data-700', 'top: 700px; opacity: 1; ');
-            pf.setAttribute('data-1200', 'top: 550px; opacity: 1; ');
-
             var u = getElementById('u');
-            u.setAttribute('data-0', 'top: 0px; opacity: 0; width:' + px(p.endPhoneWidth));
-            u.setAttribute('data-200', 'top: 120px; opacity: 0; width' + px(p.endPhoneWidth));
-            u.setAttribute('data-500', 'top: 500px; opacity: 1; ');
-            u.setAttribute('data-700', 'top: 700px;');
-            u.setAttribute('data-1200', 'top: 550px;');
-
             var f = getElementById('f');
-            f.setAttribute('data-0', 'top: 0px; opacity: 0; width:' + px(p.endPhoneWidth));
-            f.setAttribute('data-200', 'top: 280px; opacity: 0; width' + px(p.endPhoneWidth));
-            f.setAttribute('data-500', 'top: 500px; opacity: 1; ');
-            f.setAttribute('data-700', 'top: 700px;');
-            f.setAttribute('data-1200', 'top: 550px;');
-
             var ios = getElementById('ios');
-            ios.setAttribute('data-0', 'top: 0px; width:' + px(p.endPhoneWidth));
-            ios.setAttribute('data-200', 'top: 200px; opacity: 0; width' + px(p.endPhoneWidth));
-            ios.setAttribute('data-500', 'top: 500px; opacity: 0; ');
-            ios.setAttribute('data-700', 'top: 700px; opacity: 1;');
-            ios.setAttribute('data-1200', 'top: 550px;');
+            if (p.shouldAnimate) {
+                a.setAttribute('data-0', 'top: 20px; opacity: 1; width:' + px(p.startPhoneWidth * 0.4));
+                a.setAttribute('data-175', 'top: 0px; opacity: 0; width:' + px(p.endPhoneWidth * 0.4));
+                
+                pb.setAttribute('data-0', 'top: 125px; width:' + px(p.startPhoneWidth));
+                pb.setAttribute('data-175', 'top: 175px; width:' + px(p.endPhoneWidth));
+                pb.setAttribute('data-700', 'top: 700px; opacity: 1; ');
+                pb.setAttribute('data-1200', 'top: 500px; opacity: 1; ');
+                
+                pb2.setAttribute('data-0', 'top: 0px; opacity: 0; width:' + px(p.endPhoneWidth));
+                pb2.setAttribute('data-300', 'top: 300px; opacity: 0; width' + px(p.endPhoneWidth));
+                pb2.setAttribute('data-600', 'top: 600px; opacity: 1; ');
+                pb2.setAttribute('data-700', 'top: 700px;');
+                pb2.setAttribute('data-1200', 'top: 500px;');
+                
+                pf.setAttribute('data-0', 'top: 125px; width:' + px(p.startPhoneWidth));
+                pf.setAttribute('data-175', 'top: 175px; width:' + px(p.endPhoneWidth));
+                pf.setAttribute('data-700', 'top: 700px; opacity: 1; ');
+                pf.setAttribute('data-1200', 'top: 500px; opacity: 1; ');
+                
+                u.setAttribute('data-0', 'top: 0px; opacity: 0; width:' + px(p.endPhoneWidth));
+                u.setAttribute('data-200', 'top: 120px; opacity: 0; width' + px(p.endPhoneWidth));
+                u.setAttribute('data-500', 'top: 500px; opacity: 1; ');
+                u.setAttribute('data-700', 'top: 700px;');
+                u.setAttribute('data-1200', 'top: 500px;');
+                
+                f.setAttribute('data-0', 'top: 0px; opacity: 0; width:' + px(p.endPhoneWidth));
+                f.setAttribute('data-200', 'top: 280px; opacity: 0; width' + px(p.endPhoneWidth));
+                f.setAttribute('data-500', 'top: 500px; opacity: 1; ');
+                f.setAttribute('data-700', 'top: 700px;');
+                f.setAttribute('data-1200', 'top: 500px;');
+                
+                ios.setAttribute('data-0', 'top: 0px; width:' + px(p.endPhoneWidth));
+                ios.setAttribute('data-200', 'top: 200px; opacity: 0; width' + px(p.endPhoneWidth));
+                ios.setAttribute('data-500', 'top: 500px; opacity: 0; ');
+                ios.setAttribute('data-700', 'top: 700px; opacity: 1;');
+                ios.setAttribute('data-1200', 'top: 500px;');
+            } else {
+                a.style.width = px(175)
+                pb.style.width = px(p.endPhoneWidth)
+                pb2.style.width = px(p.endPhoneWidth)
+                pf.style.width = px(p.endPhoneWidth)
+                u.style.width = px(p.endPhoneWidth)
+                f.style.width = px(p.endPhoneWidth)
+                ios.style.width = px(p.endPhoneWidth)
+                var section = getElementById('sectionContainer')
+                section.style.paddingTop = px(0)
+                var phone = getElementById('phoneContainer')
+                phone.style.paddingBottom = px(800)
+                for(let child of Array.from(phone.children)) {
+                    if (child.id === 'appsText') { continue; }
+                    child.style.paddingTop = px(150)
+                }
+            }
 
         </script>
 

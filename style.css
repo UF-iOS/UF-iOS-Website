@@ -1,3 +1,9 @@
+html {
+    height: 100%;
+    min-height: 100%;
+    overflow-y: scroll;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -291,6 +297,8 @@ ul#linksList li a:hover {
 
 body {
     position: relative;
+    height: auto;
+    min-height: 100%;   
 }
 body::after {
     content: '';
@@ -426,7 +434,7 @@ body::after {
 
     div h1 {
         font-family: "San Francisco Display Semibold";
-        color: yellow;
+/*        color: yellow;*/
         letter-spacing: -0.008em;
         position: relative;
         top: 30px;
@@ -497,7 +505,7 @@ body::after {
 
     div h1 {
         font-family: "San Francisco Display Semibold";
-        color: red;
+/*        color: red;*/
         letter-spacing: -0.008em;
         position: relative;
         top: 30px;
@@ -564,7 +572,7 @@ body::after {
 
     div h1 {
         font-family: "San Francisco Display Semibold";
-        color: blue;
+/*        color: blue;*/
         letter-spacing: -0.008em;
         position: relative;
         top: 50px;
