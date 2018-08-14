@@ -13,10 +13,10 @@
     <body id="skrollr-body">
         <div class="topnav" id="myTopnav">
             <div class="navContainer"> 
-                <a href="#home" class="active"><img src="iosatuf.png" alt="ios@UF" class="navbarLogo"/></a>
-                <a href="#news">News</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
+                <a href="index.html" class="active"><img src="iosatuf.png" class="navbarLogo"/></a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+                <a href="http://bit.ly/2MFbZA7" target="_blank">Sign Up</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
@@ -24,6 +24,7 @@
         </div>
         
         <div class="phoneContainer" id="phoneContainer">
+            <img src="apps.png" id="appsText">
             <img src="phoneBackground.png" id="phoneBackground">
             <img src="phoneBackground2.png" id="phoneBackground2">
             <img src="phoneFrame.png" id="phoneFrame">
@@ -37,23 +38,34 @@
         </script>
 
         <div class="sectionContainer">
-            <h1>iOS@<span style="font-family: San Francisco Display Semibold">UF</span></h1>
+            <h1>UF iOS</h1>
 
             <div class="subtitle">
-                <span>Have you ever wanted to learn how to make an App? Or maybe you have an amazing app idea? You're at the right place.</span>
+                <span>Have you ever wanted to learn how to make your amazing App idea? Or maybe you want to meet other iOS developers. You're at the right place.</span>
             </div>
             
             <div style="padding-top: 30px">
                 <ul id="linksList">
                     <li>
-                        <a href="">Learn More <span style="font-family: SF Pro Icons; font-feature-settings: kern"></span></a>
+                        <a href="events.html">Events <span style="font-family: SF Pro Icons; font-feature-settings: kern"></span></a>
                     </li>
                     <li>
-                        <a href="http://bit.ly/2MFbZA7" target="_blank">Sign In</a>
+                        <a href="http://bit.ly/2MFbZA7" target="_blank">Sign Up <span style="font-family: SF Pro Icons; font-feature-settings: kern"></span></a>
                     </li>
                 </ul>
             </div>
 
+        </div>
+
+        <div class="footer">
+            <div class="footerEmbed"> 
+                <div style="width: 50%; display: inline-block;">
+                    <h2 style="padding-top: 16px">siddhatiwari</h2>
+                </div>
+                <div style="width: 50%; display: inline-block;">
+                    <h2 style="padding-top: 16px">2018</h2>
+                </div>
+            </div>
         </div>
 
         <script>
@@ -77,18 +89,17 @@
             class Properties {
 
                 get startPhoneWidth() {
-                    //console.log(width)
                     if (width >= 1200) {
                         return 600
                     }
                     else if (width > 700) {
-                        return 500
+                        return 550
                     }
                     else if (width > 500) {
                         return 450
                     }
                     else {
-                        return 350
+                        return 320
                     }
                 }
 
@@ -97,13 +108,13 @@
                         return 375
                     }
                     else if (width > 700) {
-                        return 360
+                        return 365
                     }
                     else if (width > 500) {
                         return 360
                     }
                     else {
-                        return 300
+                        return 320
                     }
                 }
 
@@ -115,8 +126,12 @@
 
             const p = new Properties()
 
+            var a = getElementById('appsText');
+            a.setAttribute('data-0', 'top: 20px; opacity: 1; width:' + px(p.startPhoneWidth * 0.4));
+            a.setAttribute('data-175', 'top: 0px; opacity: 0; width:' + px(p.endPhoneWidth * 0.4));
+
             var pb = getElementById('phoneBackground');
-            pb.setAttribute('data-0', 'top: 100px; width:' + px(p.startPhoneWidth));
+            pb.setAttribute('data-0', 'top: 125px; width:' + px(p.startPhoneWidth));
             pb.setAttribute('data-175', 'top: 175px; width:' + px(p.endPhoneWidth));
             pb.setAttribute('data-700', 'top: 700px; opacity: 1; ');
             pb.setAttribute('data-1200', 'top: 550px; opacity: 1; ');
@@ -129,7 +144,7 @@
             pb2.setAttribute('data-1200', 'top: 550px;');
 
             var pf = getElementById('phoneFrame');
-            pf.setAttribute('data-0', 'top: 100px; width:' + px(p.startPhoneWidth));
+            pf.setAttribute('data-0', 'top: 125px; width:' + px(p.startPhoneWidth));
             pf.setAttribute('data-175', 'top: 175px; width:' + px(p.endPhoneWidth));
             pf.setAttribute('data-700', 'top: 700px; opacity: 1; ');
             pf.setAttribute('data-1200', 'top: 550px; opacity: 1; ');

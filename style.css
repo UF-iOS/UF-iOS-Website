@@ -1,14 +1,20 @@
 html, body {
     margin: 0;
     padding: 0;
+/*    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;      
+    user-select: none;  */
 }
 
 .topnav {
   overflow: hidden;
   opacity: 50%;
+  width: 100%;
   background-color: rgba(10, 10, 10, 0.85);
-  position: -webkit-sticky;
-  position: sticky;
+  transition: 0.2s ease-in-out;
+  position: fixed;
+  position: fixed;
   top: 0;
   z-index: 10;
 }
@@ -22,9 +28,13 @@ html, body {
   text-align: center;
   width: 25%;
   height: 100%;
-  padding: 7px 0px;
+  padding: 8px 0px;
   text-decoration: none;
   font-size: 13px;
+}
+
+.topnav a:not(:first-child) {
+  padding: 11px 0px;
 }
 
 .topnav a:hover {
@@ -49,7 +59,7 @@ html, body {
 
 @media screen and (max-width: 700px) {
   .topnav.responsive a {
-    height: 25%;
+    height: 20px;
     width: 100%;
     display: block;
     text-align: center;
@@ -57,6 +67,7 @@ html, body {
   }
   .topnav.responsive a:first-child {
     width: 50%;
+    text-align: left;
   }
   .topnav.responsive a:last-child {
     width: 50%;
@@ -73,21 +84,14 @@ html, body {
     color: silver;
   }
 }
-
 .navbarLogo {
     width: auto; 
     height: 20px; 
     padding-left: 50px;
     transition: 0.2s ease-in-out;
 }
-
 .navbarLogo:hover {
     filter: opacity(80%);
-}
-
-img {
-    width: auto;
-    height: auto;
 }
 
 .phoneContainer {
@@ -97,18 +101,16 @@ img {
     text-align: center;
 }
 
-
-
-.phoneFrame {
-    position: absolute;
-    z-index: 2;
-}
-
 body {
     padding-bottom: 125px;
     background-color: white;
     color: black;
     font-family: "San Francisco Display Semibold"
+}
+
+.border {
+    z-index: 1; 
+    position: relative; 
 }
 
 .sectionContainer {
@@ -117,14 +119,96 @@ body {
     float: center; 
     display: block; 
     margin: 0 auto; 
-    z-index: 10
+    z-index: 9
 }
 
-div#subtext {
-    width: 50%;
+.sectionDetailContainer {
+    position: relative;
+    text-align: left;
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    overflow: hidden;
+    color: white;
+    padding-top: 50px;
 }
+.sectionDetailContainer img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    margin: auto;
+    z-index: 0;
+}
+
+.sectionDescriptionContainer {
+    position: relative;
+    text-align: left;
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    color: white;
+    padding-top: 50px;
+}
+.sectionDescriptionContainer h2 {
+    font-family: "SF Pro Text";
+    letter-spacing: -0.008em;
+    position: relative;
+    top: 10px;
+    left: 0px;
+    font-size: calc(20px + 2vw);
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+.sectionDescriptionContainer p {
+    font-family: "SF Pro Text";
+    letter-spacing: -0.008em;
+    position: relative;
+    top: 10px;
+    left: 0px;
+    font-size: calc(20px + 0.8vw);
+    text-align: left;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.dayTableContainer {
+    width: 60%; 
+    display: block; 
+    margin: 0 auto; 
+    overflow-x: scroll;
+}
+
+.dayTable {
+    border-spacing: 0px;
+}
+
+.dayTable th {
+    text-align: left;
+    padding-right: 10px;
+    padding-left: 20px;
+    color: gray;
+    font-family: "San Francisco Display Semibold";
+    font-size: calc(20px);
+}
+
+.dayTable td {
+    text-align: left;
+    padding-right: 10px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "SF Pro Text";
+    font-size: calc(20px + 0.8vw);
+}
+
+.dayTable tr:nth-child(2n) {
+     background-color: rgb(247, 247, 247);
+}
+
 div#phoneContainer img {
-    padding-top: 30px;
+    padding-top: 60px;
     float: left;
     width: auto;
     position: absolute;
@@ -132,7 +216,9 @@ div#phoneContainer img {
     right: 0;
     margin: auto;
     overflow: hidden;
+    pointer-events: none
 }
+
 div h1 {
     font-family: "San Francisco Display Semibold";
     letter-spacing: -0.008em;
@@ -143,12 +229,48 @@ div h1 {
     text-align: center;
 }
 
+div h2 {
+    font-family: "SF Pro Text";
+    letter-spacing: -0.008em;
+    position: relative;
+    top: 10px;
+    left: 0px;
+    font-size: calc(20px + 0.5vw);
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+h2 a {
+    font-family: "SF Pro Text";
+    text-decoration: none;
+}
+h2 a:visited {
+    color: white;
+}
+h2 a:hover {
+    color: rgb(0,112,201);
+}
+
 .subtitle {
+    position: relative;
     font-family: "San Francisco Display Semibold";
     letter-spacing: .004em;
     text-decoration: none;
     font-size: calc(12px + 2.3vw);
     text-align: center;
+    z-index: 9;
+}
+
+.subtitleLarge {
+    position: relative;
+    font-family: "San Francisco Display Semibold";
+    letter-spacing: .004em;
+    text-decoration: none;
+    font-size: calc(12px + 3vw);
+    text-align: center;
+    z-index: 9;
+    padding-top: 30px;
 }
 
 ul#linksList li a:hover {
@@ -167,6 +289,39 @@ ul#linksList li a:hover {
     z-index: 2;
 }
 
+body {
+    position: relative;
+}
+body::after {
+    content: '';
+    display: block;
+    height: 70px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(230,230,230);
+    color: silver;
+    text-align: center;
+    height: 70px;
+}
+.footerEmbed {
+    width: 60%;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+}
+.footer div:nth-child(1) h2 {
+    text-align: left;
+    font-size: 20px;
+}
+.footer div:nth-child(2) h2 {
+    text-align: right;
+    font-size: 20px;
+}
+
 @media only screen and (max-width: 500px) {
 
     .sectionContainer {
@@ -176,7 +331,25 @@ ul#linksList li a:hover {
         display: block; 
         margin: 0 auto; 
         padding-top: 500px; 
-        z-index: 10
+        z-index: 9
+    }
+
+    .sectionDetailContainer {
+        position: relative;
+        text-align: left;
+        width: 100%;
+        height: 200px;
+        margin: 0 auto;
+        overflow: hidden;
+        color: white;
+        padding-top: 50px;
+    }
+
+    .dayTableContainer {
+        width: 85%; 
+        display: block; 
+        margin: 0 auto; 
+        overflow-x: scroll;
     }
 
     div h1 {
@@ -232,7 +405,14 @@ ul#linksList li a:hover {
         margin: 0 auto; 
         padding-top: 500px; 
         padding-bottom: 0; 
-        z-index: 10
+        z-index: 9
+    }
+
+    .dayTableContainer {
+        width: 85%; 
+        display: block; 
+        margin: 0 auto; 
+        overflow-x: scroll;
     }
 
     div h1 {
@@ -296,7 +476,14 @@ ul#linksList li a:hover {
         margin: 0 auto; 
         padding-top: 500px; 
         padding-bottom: 0; 
-        z-index: 10
+        z-index: 9
+    }
+
+    .dayTableContainer {
+        width: 60%; 
+        display: block; 
+        margin: 0 auto; 
+        overflow-x: scroll;
     }
 
     div h1 {
@@ -325,7 +512,7 @@ ul#linksList li a:hover {
         padding: 0;
         justify-content: center;
         list-style-type: none;
-        width: 40%;
+        width: 50%;
     }
     ul#linksList li {
         display: table-cell;
@@ -351,7 +538,7 @@ ul#linksList li a:hover {
     .navContainer {
         display: table;
         margin: 0 auto;
-        width: 700px;
+        width: 900px;
         height: 100%;
     }
 
@@ -363,7 +550,7 @@ ul#linksList li a:hover {
         margin: 0 auto; 
         padding-top: 500px; 
         padding-bottom: 0; 
-        z-index: 10
+        z-index: 9
     }
 
     div h1 {
@@ -410,11 +597,5 @@ ul#linksList li a:hover {
     ul#linksList li a:hover {
         text-decoration: underline;
     }
-
-    /*
-                    data-0  ="top: 100px; max-width: 600px; left: 25vw" 
-                    data-75 ="top: 75px; max-width: 400px; left: 35vw" 
-                    data-400="top: 400px; max-width: 30vw; left: 35vw; transform: rotate(0deg); opacity: 1" 
-                    data-800="top: 800px; left: 40vw; opacity: 0; transform: rotate(50deg)"*/
 
 }

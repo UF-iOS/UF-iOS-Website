@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Events</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="fonts.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body id="skrollr-body" style="padding-bottom: 50px">
+        <div class="topnav" id="myTopnav">
+            <div class="navContainer"> 
+                <a href="index.html" class="active"><img src="iosatuf.png" alt="ios@UF" class="navbarLogo"/></a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+                <a href="http://bit.ly/2MFbZA7" target="_blank">Sign Up</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="sectionDetailContainer">
+            <img src="campus2blur.png" >
+            
+            <div style="width: 60%; float: center; margin: 0 auto; "> 
+                <h2 style="text-align: left; width: 50%; display: inline-block;">Events</h2>
+                <h2 style="text-align: right; width: 50%;  display: inline-block; float: right">
+                    <a href="contact.html">Contact</a>
+                </h2>
+                <hr noshade class="border" style="border-color: white">
+                <div class="subtitleLarge" style="text-align: center;">
+                    <span>Anything and Everything that is ever going to happen.</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sectionDescriptionContainer" style="color: black">
+            
+            <div class="dayTableContainer"> 
+                <h2 style="text-align: left; width: 50%; display: inline-block;">Meetings</h1>   
+                <table class="dayTable" style="width:100%">
+                  <tr>
+                    <th> </th>
+                    <th>Location</th> 
+                    <th>Time</th>
+                  </tr>
+                  <tr>
+                    <td>Monday</td>
+                    <td>TBD</td> 
+                    <td>TBD</td>
+                  </tr>
+                  <tr>
+                    <td>Tuesday</td>
+                    <td>TBD</td> 
+                    <td>TBD</td>
+                  </tr>
+                  <tr>
+                    <td>Wednesday</td>
+                    <td>TBD</td> 
+                    <td>TBD</td>
+                  </tr>
+                  <tr>
+                    <td>Thursday</td>
+                    <td>TBD</td> 
+                    <td>TBD</td>
+                  </tr>
+                  <tr>
+                    <td>Friday</td>
+                    <td>TBD</td> 
+                    <td>TBD</td>
+                  </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="footerEmbed"> 
+                <div style="width: 50%; display: inline-block;">
+                    <h2 style="padding-top: 16px">siddhatiwari</h2>
+                </div>
+                <div style="width: 50%; display: inline-block;">
+                    <h2 style="padding-top: 16px">2018</h2>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+
+            function getElementById(id) {
+                return document.getElementById(id);
+            }
+
+        </script>
+
+        <script type="text/javascript" src="src/skrollr.js"></script>
+        <script type="text/javascript" src="src/skrollr.stylesheets.js"></script>
+        <script type="text/javascript">
+        var s = skrollr.init({
+            constants: {
+                foobar: '1000px'
+            }
+        });
+        var root = document.documentElement;
+        document.addEventListener('resize', () => {
+          root.style.setProperty('--screen-x', window.screenX)
+          root.style.setProperty('--screen-y', window.screenY)
+        })
+        </script>
+    </body>
+
+</html>
