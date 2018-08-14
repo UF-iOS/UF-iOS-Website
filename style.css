@@ -235,6 +235,15 @@ div h1 {
     text-align: center;
 }
 
+.contactLink {
+    color: rgb(0,112,201);
+    text-decoration: none;
+}
+
+.contactLink:hover {
+    text-decoration: underline;
+}
+
 div h2 {
     font-family: "SF Pro Text";
     letter-spacing: -0.008em;
