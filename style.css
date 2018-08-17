@@ -238,6 +238,8 @@ div h1 {
 .contactLink {
     color: rgb(0,112,201);
     text-decoration: none;
+    font-family: "SF Pro Text";
+    font-size: 25px;
 }
 
 .contactLink:hover {
