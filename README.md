@@ -1,3 +1,3 @@
 # UF-iOS-Club
 
-https://siddhatiwari.github.io/UF-iOS-Club/
+https://uf-ios.github.io/UF-iOS-Website/
